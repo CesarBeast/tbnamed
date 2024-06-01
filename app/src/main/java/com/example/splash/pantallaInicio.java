@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+
 public class pantallaInicio extends AppCompatActivity {
 
     private Button btnLinkRegistro, btnLinkLogin;
