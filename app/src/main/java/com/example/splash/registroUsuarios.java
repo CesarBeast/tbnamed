@@ -100,7 +100,7 @@ public class registroUsuarios extends AppCompatActivity {
 
     private void updateUI(FirebaseUser user) {
         dialog.dismiss();
-        startActivity(new Intent(this, chatGroup.class));
+        startActivity(new Intent(this, homeUsuario.class));
         finish();
     }
 }

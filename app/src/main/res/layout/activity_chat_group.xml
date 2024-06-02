@@ -31,6 +31,7 @@
         </LinearLayout>
     </androidx.appcompat.widget.Toolbar>
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chat_list"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:clipToPadding="false"
@@ -56,6 +57,7 @@
             android:layout_height="match_parent">
 
             <EditText
+                android:id="@+id/chat_box"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:background="@color/transparente"
@@ -74,6 +76,7 @@
                 android:scaleType="centerCrop"
                 android:background="@drawable/round_ripple"
                 android:padding="5dp"
+                android:onClick="OpenExplorer"
                 android:src="@drawable/baseline_photo_camera_24"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -86,6 +89,7 @@
                 android:scaleType="centerCrop"
                 android:background="@drawable/round_ripple"
                 android:padding="5dp"
+                android:onClick="addMessage"
                 android:src="@drawable/baseline_arrow_right_alt_24"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

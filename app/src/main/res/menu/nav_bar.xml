@@ -7,10 +7,10 @@
         android:title="Inicio"/>
 
     <item
-        android:id="@+id/Config"
-        android:title="Config"
+        android:id="@+id/Grupos"
+        android:title="Grupos"
         android:iconTint="@color/white"
-        android:icon="@drawable/baseline_settings_24" />
+        android:icon="@drawable/baseline_archive_24" />
 
     <item
         android:id="@+id/Cuenta"

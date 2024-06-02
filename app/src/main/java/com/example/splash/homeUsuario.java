@@ -31,10 +31,10 @@ public class homeUsuario extends AppCompatActivity {
         binding.bottomnavigation.setOnItemSelectedListener(item -> {
 
             if (item.getItemId() == R.id.home) {
-                Intent intent = new Intent(homeUsuario.this, pantallaInicio.class);
+                Intent intent = new Intent(homeUsuario.this, homeUsuario.class);
                 startActivity(intent);
                 finish();
-            } else if (item.getItemId() == R.id.Config) {
+            } else if (item.getItemId() == R.id.Grupos) {
                 replaceFragment(new ConfigFragment());
             } else if (item.getItemId() == R.id.Cuenta) {
                 replaceFragment(new CuentaFragment());
