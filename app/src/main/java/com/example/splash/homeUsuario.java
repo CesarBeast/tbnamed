@@ -7,7 +7,6 @@ import android.widget.ImageView;
 import android.view.animation.LinearInterpolator;
 
 import androidx.activity.EdgeToEdge;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -35,7 +34,7 @@ public class homeUsuario extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             } else if (item.getItemId() == R.id.Grupos) {
-                replaceFragment(new ConfigFragment());
+                replaceFragment(new GruposFragment());
             } else if (item.getItemId() == R.id.Cuenta) {
                 replaceFragment(new CuentaFragment());
             }

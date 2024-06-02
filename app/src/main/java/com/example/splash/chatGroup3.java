@@ -1,10 +1,11 @@
 package com.example.splash;
 
 import static com.example.splash.cords.FirebaseCords.MAIN_CHAT_DATABASE;
+import static com.example.splash.cords.FirebaseCords.MAIN_CHAT_DATABASE3;
 import static com.example.splash.cords.FirebaseCords.mAuth;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -14,12 +15,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.appcompat.widget.Toolbar;
-
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -28,11 +27,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.splash.adapter.ChatAdapter;
 import com.example.splash.model.ChatModel;
-import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.Query;
@@ -40,11 +37,8 @@ import com.google.firebase.firestore.Query;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Objects;
 
-public class chatGroup extends AppCompatActivity {
-
-
+public class chatGroup3 extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
@@ -80,7 +74,7 @@ public class chatGroup extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_chat_group);
+        setContentView(R.layout.activity_chat_group_3);
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -102,7 +96,7 @@ public class chatGroup extends AppCompatActivity {
         chat_list.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, true));
 
 
-        Query query = MAIN_CHAT_DATABASE.orderBy("timestamp", Query.Direction.DESCENDING);
+        Query query = MAIN_CHAT_DATABASE3.orderBy("timestamp", Query.Direction.DESCENDING);
         FirestoreRecyclerOptions<ChatModel> option = new FirestoreRecyclerOptions.Builder<ChatModel>()
                 .setQuery(query, ChatModel.class)
                 .build();
@@ -134,44 +128,17 @@ public class chatGroup extends AppCompatActivity {
             messageObj.put("messageID", messageID);
             messageObj.put("user_image_url", user_image_url);
 
-            MAIN_CHAT_DATABASE.document(messageID).set(messageObj).addOnCompleteListener(new OnCompleteListener<Void>() {
+            MAIN_CHAT_DATABASE3.document(messageID).set(messageObj).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if (task.isSuccessful()) {
-                        Toast.makeText(chatGroup.this, "Message Sent", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(chatGroup3.this, "Message Sent", Toast.LENGTH_SHORT).show();
                         chat_box.setText("");
                     } else {
-                        Toast.makeText(chatGroup.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(chatGroup3.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }
             });
         }
     }
 }
-
-//FUNCIÓN DE CÁMARA QUE IBA A AGREGAR PERO ES UNA PUTADA
-
-    /*public void OpenExplorer(View view) {
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_MEDIA_IMAGES) == PackageManager.PERMISSION_GRANTED &&
-                ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_MEDIA_VIDEO) == PackageManager.PERMISSION_GRANTED) {
-            ChooseImage();
-        } else {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_MEDIA_IMAGES, Manifest.permission.READ_MEDIA_VIDEO}, 20);
-        }
-    }
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults){
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if(requestCode == 20){
-            if(grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                Toast.makeText(this, "Permission Granted", Toast.LENGTH_SHORT).show();
-                ChooseImage();
-            }else{
-                Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
-    private void ChooseImage() {
-
-    }
-}*/

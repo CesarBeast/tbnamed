@@ -1,6 +1,9 @@
 package com.example.splash;
 
+import static com.example.splash.cords.FirebaseCords.mAuth;
+
 import android.animation.ValueAnimator;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
+import android.widget.Button;
 import android.widget.ImageView;
 
 /**
@@ -56,17 +60,29 @@ public class CuentaFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_config, container, false);
+        View view = inflater.inflate(R.layout.fragment_cuenta, container, false);
 
         ImageView backgroundOne = view.findViewById(R.id.background_one);
         ImageView backgroundTwo = view.findViewById(R.id.background_two);
 
         startBackgroundAnimation(backgroundOne, backgroundTwo);
-
+        Button finsesion = view.findViewById(R.id.finsesion);
+        // Set an OnClickListener to handle its click event
+        finsesion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Handle the button click here
+                // For example, start a new activity
+                mAuth.signOut();
+                Intent intent = new Intent(getActivity(), pantallaInicio.class);
+                startActivity(intent);
+            }
+        });
         return view;
     }
     private void startBackgroundAnimation(ImageView backgroundOne, ImageView backgroundTwo) {

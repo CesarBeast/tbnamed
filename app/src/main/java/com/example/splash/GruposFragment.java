@@ -1,6 +1,8 @@
 package com.example.splash;
 
 import android.animation.ValueAnimator;
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,14 +11,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
+import android.widget.Button;
 import android.widget.ImageView;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ConfigFragment#newInstance} factory method to
+ * Use the {@link GruposFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ConfigFragment extends Fragment {
+public class GruposFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -27,7 +30,7 @@ public class ConfigFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public ConfigFragment() {
+    public GruposFragment() {
         // Required empty public constructor
     }
 
@@ -40,8 +43,8 @@ public class ConfigFragment extends Fragment {
      * @return A new instance of fragment ConfigFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ConfigFragment newInstance(String param1, String param2) {
-        ConfigFragment fragment = new ConfigFragment();
+    public static GruposFragment newInstance(String param1, String param2) {
+        GruposFragment fragment = new GruposFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -55,18 +58,48 @@ public class ConfigFragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+
         }
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_config, container, false);
+        View view = inflater.inflate(R.layout.fragment_grupos, container, false);
 
         ImageView backgroundOne = view.findViewById(R.id.background_one);
         ImageView backgroundTwo = view.findViewById(R.id.background_two);
 
         startBackgroundAnimation(backgroundOne, backgroundTwo);
-
+        Button grupo1 = view.findViewById(R.id.boton1);
+        Button grupo2 = view.findViewById(R.id.boton2);
+        Button grupo3 = view.findViewById(R.id.boton3);
+        // Set an OnClickListener to handle its click event
+        grupo1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Handle the button click here
+                // For example, start a new activity
+                Intent intent = new Intent(getActivity(), chatGroup.class);
+                startActivity(intent);
+            }
+        });
+        grupo2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Handle the button click here
+                // For example, start a new activity
+                Intent intent = new Intent(getActivity(), chatGroup2.class);
+                startActivity(intent);
+            }
+        });
+        grupo3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Handle the button click here
+                // For example, start a new activity
+                Intent intent = new Intent(getActivity(), chatGroup3.class);
+                startActivity(intent);
+            }
+        });
         return view;
     }
     private void startBackgroundAnimation(ImageView backgroundOne, ImageView backgroundTwo) {
