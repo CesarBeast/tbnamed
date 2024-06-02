@@ -44,7 +44,12 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-
-    //google firebase dependency
+    implementation(platform("com.google.firebase:firebase-bom:33.1.0"))
     implementation("com.google.android.gms:play-services-auth:21.2.0")
+    implementation("com.google.firebase:firebase-storage:21.0.0")
+    implementation("com.google.firebase:firebase-firestore:25.0.0")
+    implementation("com.firebaseui:firebase-ui-firestore:8.0.2")
+    implementation("com.github.captain-miao:optroundcardview:1.0.0")
+    implementation("de.hdodenhof:circleimageview:3.1.0")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
 }

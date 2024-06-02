@@ -4,4 +4,5 @@
     <string name="splashapp">SplashApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="default_web_client_id">1017214330132-nf8q9sc4jikr0seoiikb4esu5knaa99e.apps.googleusercontent.com</string>
 </resources>
