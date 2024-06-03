@@ -23,7 +23,9 @@
             android:background="@drawable/fondousuario"
             android:id="@+id/background_two"/>
     </FrameLayout>
+
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical">
@@ -33,34 +35,33 @@
             android:id="@+id/boton1"
             android:layout_width="match_parent"
             android:layout_height="95dp"
+            android:background="@drawable/redondo"
+            android:backgroundTint="@color/ejer"
             android:elevation="5dp"
             android:gravity="center"
-            android:text="Rutinas"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:text="Rutinas" />
 
         <Button
             android:id="@+id/boton2"
             android:layout_width="match_parent"
             android:layout_height="95dp"
-            android:text="Nutricion"
+            android:background="@drawable/redondo"
+            android:backgroundTint="@color/nutri"
             android:elevation="5dp"
             android:gravity="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/boton1" />
+            android:text="Nutricion"
+            tools:layout_editor_absoluteY="95dp" />
 
         <Button
             android:id="@+id/boton3"
             android:layout_width="match_parent"
             android:layout_height="95dp"
-            android:text="Apoyo"
+            android:background="@drawable/redondo"
+            android:backgroundTint="@color/plati"
             android:elevation="5dp"
             android:gravity="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/boton2" />
+            android:text="general"
+            tools:layout_editor_absoluteY="190dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     <com.google.android.material.bottomnavigation.BottomNavigationView
