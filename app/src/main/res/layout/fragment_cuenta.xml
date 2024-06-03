@@ -49,6 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:elevation="5dp"
+            android:background="@color/cerrar"
             android:gravity="center"
             android:text="Cerrar Sesión"
             app:layout_constraintStart_toStartOf="parent"

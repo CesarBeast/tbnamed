@@ -3,9 +3,13 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#3A3A3A</color>
-    <color name="grey">#A3A3A3</color>
+    <color name="grey">#DCDCDC</color>
     <color name="usuario">#F2030925</color>
     <color name="principal">#011120</color>
     <color name="fondo">#DCDDDE</color>
     <color name="transparente">#00000000</color>
+    <color name="nutri">#8685EF</color>
+    <color name="ejer">#DFF8D5</color>
+    <color name="plati">#63656A</color>
+    <color name="cerrar">#ACA7CB</color>
 </resources>

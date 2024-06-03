@@ -5,13 +5,14 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/plati"
     tools:context=".chatGroup3">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="47dp"
-        android:background="@color/white"
+        android:background="@color/plati"
         android:layout_margin="10dp"
         android:elevation="5dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,10 +25,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Apoyo"
+                android:text="General"
                 android:textStyle="bold"
                 android:textSize="20sp"
-                android:textColor="#323232"/>
+                android:textColor="@color/grey"/>
         </LinearLayout>
     </androidx.appcompat.widget.Toolbar>
     <androidx.recyclerview.widget.RecyclerView
