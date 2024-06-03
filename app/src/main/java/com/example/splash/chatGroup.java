@@ -68,6 +68,10 @@ public class chatGroup extends AppCompatActivity {
             mAuth.signOut();
             startActivity(new Intent(this, pantallaInicio.class));
         }
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 

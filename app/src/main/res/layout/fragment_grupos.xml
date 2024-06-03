@@ -29,12 +29,13 @@
         android:layout_gravity="center_vertical">
 
         <Button
+
             android:id="@+id/boton1"
             android:layout_width="match_parent"
             android:layout_height="95dp"
             android:elevation="5dp"
             android:gravity="center"
-            android:text="Grupo 1"
+            android:text="Rutinas"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -43,7 +44,7 @@
             android:id="@+id/boton2"
             android:layout_width="match_parent"
             android:layout_height="95dp"
-            android:text="Grupo 2"
+            android:text="Nutricion"
             android:elevation="5dp"
             android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
@@ -54,7 +55,7 @@
             android:id="@+id/boton3"
             android:layout_width="match_parent"
             android:layout_height="95dp"
-            android:text="Grupo 3"
+            android:text="Apoyo"
             android:elevation="5dp"
             android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
